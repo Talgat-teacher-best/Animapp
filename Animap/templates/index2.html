@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+	{% block content %}
+	<style>
+	#shrift {
+    font-family: Arial, sans-serif;
+    color: #0000FF;
+    position: absolute;
+    font-size: 77px;
+    font-weight: bold;
+    top: 10%;
+    left: 30%;
+    }
+    #to {
+    font-family: Arial, sans-serif;
+    color: #0000FF;
+    position: absolute;
+    font-size: 77px;
+    font-weight: bold;
+    top: 20%;
+    left: 40%;
+    }
+    #shrift2 {
+    font-family: Arial, sans-serif;
+    color: #0000FF;
+    position: absolute;
+    font-size: 110px;
+    font-weight: bold;
+    top: 30%;
+    left: 35%;
+    
+    }
+    #button{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #button2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    #copy{
+    color : #FFFFFF;
+    position: absolute;
+    top: 90%;
+    left: 70%;
+    font-size: 10px
+    }
+    body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: url(https://i.pinimg.com/originals/e8/b5/a8/e8b5a862f62ee1969d600cb0b8a1de9a.jpg);
+             background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	</style>
+    <body>
+	<div id = "shrift"><p>WELCOME</p></div>
+	<div id="to"><p>TO</p></div>>
+	<div id = "shrift2"><p>ANIMAP</p></div>
+	<div id="button">
+	<form action="{% url 'Menu' %}">
+	<button type="submit" class="btn btn-primary btn-lg" >Дальше</button>
+    </form>
+    </div>
+    <div id="button2">
+    <form action="{% url 'Instruction' %}">
+	<button type="submit" class="btn btn-secondary btn-lg">Аннотация</button>
+    </form>
+	</div>
+	<div id="copy">
+        <p>You have visited this page {{ num_visits }} time{% if num_visits > 1 %}s{% endif %}.</p>
+		<p>©Права этого сайта защищены компанией ("TOO Animap")</p>
+	</div>
+</body>
+	{% endblock %}
+

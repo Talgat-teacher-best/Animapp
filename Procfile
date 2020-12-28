@@ -1,0 +1,1 @@
+web: gunicorn Animap.wsgi ==log--file =

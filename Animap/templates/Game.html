@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  body, 
+  html {
+    background: url(https://w.wallha.com/ws/3/iaS60hpj.png);
+             background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+</style>
+<body>
+<h1>Игра: Угадай Аниме по персонажу</h1>
+<h1>{{ title }}</h1>
+<form action="{% url 'checkans' %}" method="get">
+  <input type="text" name="answer" placeholder="Название Аниму">
+  <button type="submit">АТВЕЧАЮ</button>
+</form>
+
+<h3>{{ msg }}</h3>
+<h2> очки {{ score }}</h2>
+</body>
+
+{% endblock %}

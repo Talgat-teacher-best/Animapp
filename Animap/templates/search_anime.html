@@ -1,0 +1,26 @@
+<!-- templates/search_anime.html -->
+{% extends "base.html" %}
+{% block content %}
+<style>
+	body, 
+	html {
+		background : url('https://archive-media-1.nyafuu.org/w/image/1405/91/1405913532261.png');
+		background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	}
+</style>
+<body>
+<h1 align="center">Ищещь Аниму?</h1>
+<form>
+   <p><input type="search" name="q" placeholder="ФуУУ! Анимеонли"> 
+   <input type="submit" value="Найти"></p>
+</form>
+<a href="{% url 'index2' %}"><button type="button" class="btn btn-dark">НАЗАД</button></a>
+<a href="{% url 'create' %}"><button type="button" class="btn btn-dark">Добавить аниме</button></a>
+</body>
+{% endblock %}

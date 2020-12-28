@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  body, 
+  html {
+    background: url(https://wallha.com/download/ws/12/aPy6MfLF-wallha.com.png);
+             background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+</style>
+<body>
+<h1>Вы искали : {{ query}} </h1>
+<a href="{% url 'SearchManga' %}"><button type="button" class="btn btn-dark">НАЗАД</button></a>
+{% for results in result %}
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+    	{% if results.picture %}
+      <img src="{{ results.picture.url }}" width="190" height="300" alt="...">
+    	{% endif %}
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ results.title }}</h5>
+        <p class="card-text">{{ results.description }}</p>
+        <p class="card-text"><small class="text-muted">{{ results.author }}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+{% endfor %}
+{% endblock %}
